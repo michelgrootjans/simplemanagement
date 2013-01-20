@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nummer</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for transaction in @transactions do %>
+    <tr>
+      <td><%= debug transaction %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Upload transactions ...", transactions_upload_path %>
