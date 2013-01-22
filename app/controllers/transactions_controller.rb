@@ -1,6 +1,11 @@
 class TransactionsController < ApplicationController
   def index
-    @transactions = Transaction.all
+    @transactions = Transaction.order(:execution_date, :number)
+  end
+
+  def unattached
+    @transactions = Transaction.where(bill_id: nil)
+    render :index
   end
 
   def show

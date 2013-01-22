@@ -1,4 +1,6 @@
-<%= debug @vendor %>
+Name: <%= @vendor.name %>
+Account: <%= @vendor.account_number %>
+<%= link_to "Edit...", edit_vendor_path(@vendor) %>
 
 <h2>Bills</h2>
 <table>
@@ -16,3 +18,5 @@
   <% end %>
   </tbody>
 </table>
+
+<%= debug @vendor %>

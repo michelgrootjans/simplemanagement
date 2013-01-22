@@ -7,7 +7,8 @@
   <tbody>
   <% for transaction in @transactions do %>
     <tr>
-      <td><%= transaction.number %></td>
+      <td><%= transaction.execution_date %></td>
+      <td><%= transaction.currency%> <%= "%6.2f" % transaction.amount if transaction.amount.present? %></td>
       <td><%= link_to "Details...", transaction_path(transaction) %></td>
     </tr>
   <% end %>
