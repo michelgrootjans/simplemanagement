@@ -1,6 +1,4 @@
-<%= debug @bill %>
-
-Vendor: <%= link_to "Vendor...", vendor_path(@bill.vendor) if @bill.vendor %>
+Vendor: <%= link_to @bill.vendor.name, vendor_path(@bill.vendor) if @bill.vendor %>
 
 <h2>Transactions</h2>
 <table>
@@ -40,3 +38,5 @@ Vendor: <%= link_to "Vendor...", vendor_path(@bill.vendor) if @bill.vendor %>
   <% end %>
   </tbody>
 </table>
+
+<%= debug @bill %>
