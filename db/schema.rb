@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130122193119) do
+ActiveRecord::Schema.define(:version => 20130122220946) do
 
   create_table "bills", :force => true do |t|
     t.integer  "vendor_id"
@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(:version => 20130122193119) do
     t.date     "value_date"
     t.decimal  "amount"
     t.string   "currency"
-    t.string   "description"
+    t.text     "description",              :limit => 255
     t.string   "detail"
     t.string   "message"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
     t.integer  "bill_id"
   end
 

@@ -1,4 +1,8 @@
-<%= debug @transaction %>
+<%= show_for @transaction do |f| %>
+    <%= f.attribute :date %>
+    <%= f.attribute :amount %>
+    <%= f.attribute :summary %>
+<% end %>
 
 <% if @transaction.bill.nil? %>
     <%= form_for(Bill.new) do |f| %>
@@ -8,3 +12,5 @@
 <% else %>
     <%= link_to "Bill...", bill_path(@transaction.bill) %>
 <% end %>
+
+<%= debug @transaction %>
