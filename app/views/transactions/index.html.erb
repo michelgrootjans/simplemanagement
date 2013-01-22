@@ -1,14 +1,16 @@
 <table>
   <thead>
     <tr>
-      <th>Nummer</th>
+      <th>Date</th>
+      <th>Amount</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
   <% for transaction in @transactions do %>
     <tr>
       <td><%= transaction.execution_date %></td>
-      <td><%= transaction.currency%> <%= "%6.2f" % transaction.amount if transaction.amount.present? %></td>
+      <td><%= "%6.2f" % transaction.amount if transaction.amount.present? %></td>
       <td><%= link_to "Details...", transaction_path(transaction) %></td>
     </tr>
   <% end %>
