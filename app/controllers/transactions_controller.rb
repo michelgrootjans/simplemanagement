@@ -7,7 +7,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
   end
 
-  def attach_transaction
+  def attach
   	execute(:attatch_transaction_to_bill)
   	redirect_to request.referrer
   end
