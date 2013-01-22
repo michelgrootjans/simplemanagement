@@ -8,13 +8,7 @@ class BillsController < ApplicationController
   end
 
   def create
-    ActiveRecord::Base.transaction do
-      transaction = Transaction.find(params[:transaction_id])
-      vendor = Vendor.create
-      bill = vendor.bills.create
-      transaction.bill = bill
-      transaction.save
-    end
+    execute(:create_bill_from_transaction, params)
 
     redirect_to request.referrer
   end
