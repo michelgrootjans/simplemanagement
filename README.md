@@ -7,16 +7,16 @@ FEATURES
 --------
 - load transactions in .csv format
 - create bill based on transaction
+- attach transaction to existing bill
 
 WIP
 ---
-- attach transaction to existing bill
+- attach transaction to a new bill from an existing vendor
 
 TODO
 ----
 - edit vendor
 - edit bill
-- attach transaction to a new bill from an existing vendor
 - create bill
 - add transaction to existing bill
 - authentication
