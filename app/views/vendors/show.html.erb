@@ -1,6 +1,7 @@
 <%= show_for @vendor do |f| %>
     <%= f.attribute :name %>
     <%= f.attribute :account_number %>
+    <%= f.attribute :amount %>
 <% end %>
 <%= link_to "Edit...", edit_vendor_path(@vendor) %>
 
@@ -12,9 +13,10 @@
     </tr>
   </thead>
   <tbody>
-  <% for bill in @vendor.bills do %>
+  <% for bill in @bills do %>
     <tr>
       <td><%= bill.date %></td>
+      <td><%= bill.amount %></td>
       <td><%= link_to "Details...", bill_path(bill) %></td>
     </tr>
   <% end %>

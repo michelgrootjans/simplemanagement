@@ -4,7 +4,8 @@ class VendorsController < ApplicationController
   end
 
   def show
-    @vendor = Vendor.find(params[:id])
+    @vendor = Vendor.includes(:bills => [:transactions]).find(params[:id])
+    @bills = @vendor.bills
     @possible_transactions = Transaction.possible_transactions_for(@vendor)
   end
 

@@ -5,4 +5,8 @@ class Bill < ActiveRecord::Base
   has_many :transactions
 
   delegate :account_number, :search_hint, to: :vendor
+
+  def amount
+    transactions.map(&:amount).sum
+  end
 end
