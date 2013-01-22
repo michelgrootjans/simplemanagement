@@ -10,12 +10,12 @@ FEATURES
 
 WIP
 ---
+- attach transaction to existing bill
 
 TODO
 ----
 - edit vendor
 - edit bill
-- attach transaction to existing bill
 - attach transaction to a new bill from an existing vendor
 - create bill
 - add transaction to existing bill

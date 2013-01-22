@@ -12,8 +12,30 @@ Vendor: <%= link_to "Vendor...", vendor_path(@bill.vendor) if @bill.vendor %>
   <tbody>
   <% for transaction in @bill.transactions do %>
     <tr>
-      <td><%= transaction.number %></td>
       <td><%= link_to "Details...", transaction_path(transaction) %></td>
+      <td><%= transaction.value_date %></td>
+      <td><%= transaction.execution_date %></td>
+      <td><%= transaction.amount %> <%= transaction.currency %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h2>Other transactions</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nummer</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for transaction in @possible_transactions do %>
+    <tr>
+      <td><%= link_to "Details...", transaction_path(transaction) %></td>
+      <td><%= transaction.value_date %></td>
+      <td><%= transaction.execution_date %></td>
+      <td><%= transaction.amount %> <%= transaction.currency %></td>
+      <td><%= link_to "Attach to this bill", attach_bill_transaction_path(@bill, transaction), method: :put %></td>
     </tr>
   <% end %>
   </tbody>

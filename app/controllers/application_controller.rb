@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  def execute(command, parameters)
+  def execute(command, parameters = params)
     handler = find_handler_for(command)
     ActiveRecord::Base.transaction do
       handler.handle(parameters)
