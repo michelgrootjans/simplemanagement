@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130120181004) do
+ActiveRecord::Schema.define(:version => 20130120220524) do
+
+  create_table "bills", :force => true do |t|
+    t.integer  "vendor_id"
+    t.date     "date"
+    t.date     "due_date"
+    t.text     "notes"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "transactions", :force => true do |t|
     t.string   "account_number"
@@ -27,6 +36,13 @@ ActiveRecord::Schema.define(:version => 20130120181004) do
     t.string   "message"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+    t.integer  "bill_id"
+  end
+
+  create_table "vendors", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

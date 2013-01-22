@@ -5,16 +5,19 @@ Simple management of bank account. This is intended for private use, but feel fr
 
 FEATURES
 --------
-none yet
+- load transactions in .csv format
+- create bill based on transaction
 
 WIP
 ---
-- load transactions in .csv format
 
 TODO
 ----
+- edit vendor
+- edit bill
+- attach transaction to existing bill
+- attach transaction to a new bill from an existing vendor
 - create bill
-- create bill based on transaction
 - add transaction to existing bill
 - authentication
 - create invoice

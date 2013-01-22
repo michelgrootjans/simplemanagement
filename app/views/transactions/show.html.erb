@@ -1,0 +1,10 @@
+<%= debug @transaction %>
+
+<% if @transaction.bill.nil? %>
+    <%= form_for(Bill.new) do |f| %>
+        <%= hidden_field_tag("transaction_id", @transaction.id) %>
+        <%= submit_tag "Create Bill" %>
+    <% end %>
+<% else %>
+    <%= link_to "Bill...", bill_path(@transaction.bill) %>
+<% end %>

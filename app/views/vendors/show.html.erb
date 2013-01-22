@@ -1,0 +1,18 @@
+<%= debug @vendor %>
+
+<h2>Bills</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nummer</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for bill in @vendor.bills do %>
+    <tr>
+      <td><%= bill.date %></td>
+      <td><%= link_to "Details...", bill_path(bill) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

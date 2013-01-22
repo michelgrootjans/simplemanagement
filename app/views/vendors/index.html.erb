@@ -1,0 +1,14 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nummer</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for vendor in @vendors do %>
+    <tr>
+      <td><%= link_to vendor.name, vendor_path(vendor) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

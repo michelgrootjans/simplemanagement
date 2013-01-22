@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nummer</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for bill in @bills do %>
+    <tr>
+      <td><%= link_to bill.vendor.name, vendor_path(bill.vendor) %></td>
+      <td><%= bill.date %></td>
+      <td><%= link_to "Details...", bill_path(bill) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,3 +1,8 @@
+<%= debug @bill %>
+
+Vendor: <%= link_to "Vendor...", vendor_path(@bill.vendor) if @bill.vendor %>
+
+<h2>Transactions</h2>
 <table>
   <thead>
     <tr>
@@ -5,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-  <% for transaction in @transactions do %>
+  <% for transaction in @bill.transactions do %>
     <tr>
       <td><%= transaction.number %></td>
       <td><%= link_to "Details...", transaction_path(transaction) %></td>
@@ -13,8 +18,3 @@
   <% end %>
   </tbody>
 </table>
-
-<%= form_tag({controller: :upload, action: :transactions}, :multipart => true) do %>
-  <%= file_field_tag 'transactions' %>
-  <%= submit_tag "Upload" %>
-<% end %>

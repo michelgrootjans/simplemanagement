@@ -4,6 +4,7 @@ class ImportTransactionsCommandHandler < CommandHandler
   def handle csv
     transactions = convert(csv)
 
+    Transaction.delete_all
     for transaction in transactions do
       transaction.save
     end

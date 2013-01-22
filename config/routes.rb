@@ -1,9 +1,10 @@
 Simplemanagement::Application.routes.draw do
   # root :to => 'welcome#index'
 
-  resources :transactions, only: [:index] do
-  end
+  resources :vendors,      only: [:index, :show]
+  resources :bills,        only: [:index, :show, :create]
+  resources :transactions, only: [:index, :show]
 
-  get "transactions/upload" => "transactions#upload"
-  post "transactions/upload" => "transactions#do_upload"
+  post "upload/transactions" => "upload#transactions"
+
 end
