@@ -1,8 +1,6 @@
 class UploadController < ApplicationController
   def transactions
-    uploaded_io = params[:transactions]
-
-    ImportTransactionsCommandHandler.new.handle(uploaded_io.read)
+  	execute :import_transaction
 
     redirect_to request.referrer
   end

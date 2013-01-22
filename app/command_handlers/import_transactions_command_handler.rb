@@ -1,7 +1,12 @@
 require 'csv'
 
 class ImportTransactionsCommandHandler < CommandHandler
-  def handle csv
+  def handle params
+    uploaded_io = params[:transactions]
+    import(uploaded_io.read)
+  end
+
+  def import csv
     transactions = convert(csv)
 
     Transaction.delete_all
