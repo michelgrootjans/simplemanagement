@@ -1,4 +1,4 @@
-Vendor: <%= link_to @bill.vendor.name, vendor_path(@bill.vendor) if @bill.vendor %>
+Vendor: <%= link_to @vendor.name, vendor_path(@vendor) if @vendor.present? %>
 
 <h2>Transactions</h2>
 <table>
@@ -19,7 +19,7 @@ Vendor: <%= link_to @bill.vendor.name, vendor_path(@bill.vendor) if @bill.vendor
   </tbody>
 </table>
 
-<h2>Other transactions</h2>
+<h2>Unattached matching transactions</h2>
 <table>
   <thead>
     <tr>

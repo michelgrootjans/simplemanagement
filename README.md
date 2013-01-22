@@ -8,10 +8,10 @@ FEATURES
 - load transactions in .csv format
 - create bill based on transaction
 - attach transaction to existing bill
+- attach transaction to a new bill from an existing vendor
 
 WIP
 ---
-- attach transaction to a new bill from an existing vendor
 
 TODO
 ----

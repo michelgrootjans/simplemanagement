@@ -16,4 +16,9 @@ class TransactionsController < ApplicationController
   	execute(:attatch_transaction_to_bill)
   	redirect_to request.referrer
   end
+
+  def create_bill
+  	execute(:create_bill_for_vendor)
+  	redirect_to request.referrer
+  end
 end

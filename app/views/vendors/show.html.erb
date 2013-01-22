@@ -1,5 +1,7 @@
-Name: <%= @vendor.name %>
-Account: <%= @vendor.account_number %>
+<%= show_for @vendor do |f| %>
+    <%= f.attribute :name %>
+    <%= f.attribute :account_number %>
+<% end %>
 <%= link_to "Edit...", edit_vendor_path(@vendor) %>
 
 <h2>Bills</h2>
@@ -15,6 +17,27 @@ Account: <%= @vendor.account_number %>
       <td><%= bill.date %></td>
       <td><%= link_to "Details...", bill_path(bill) %></td>
     </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+<h2>Unattached matching transactions</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Nummer</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% for transaction in @possible_transactions do %>
+      <tr>
+        <td><%= link_to "Details...", transaction_path(transaction) %></td>
+        <td><%= transaction.value_date %></td>
+        <td><%= transaction.execution_date %></td>
+        <td><%= transaction.amount %> <%= transaction.currency %></td>
+        <td><%= link_to "Create new bill for this transaction...", create_bill_vendor_transaction_path(@vendor, transaction), method: :post %></td>
+      </tr>
   <% end %>
   </tbody>
 </table>

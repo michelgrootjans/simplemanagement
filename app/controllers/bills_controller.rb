@@ -6,9 +6,7 @@ class BillsController < ApplicationController
   def show
     @bill = Bill.find(params[:id])
     @vendor = @bill.vendor
-    @possible_transactions = Transaction.where(bill_id: nil)
-                                        .find_all_by_recipient_account_number(@vendor.account_number)
-    @possible_transactions -= @bill.transactions
+    @possible_transactions = Transaction.possible_transactions_for(@bill)
   end
 
   def create

@@ -3,4 +3,6 @@ class Bill < ActiveRecord::Base
 
   belongs_to :vendor
   has_many :transactions
+
+  delegate :account_number, :search_hint, to: :vendor
 end

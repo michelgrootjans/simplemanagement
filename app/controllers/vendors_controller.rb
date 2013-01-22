@@ -5,6 +5,7 @@ class VendorsController < ApplicationController
 
   def show
     @vendor = Vendor.find(params[:id])
+    @possible_transactions = Transaction.possible_transactions_for(@vendor)
   end
 
   def edit
