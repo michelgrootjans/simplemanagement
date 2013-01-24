@@ -1,3 +1,5 @@
+<h1>Transaction</h1>
+
 <%= show_for @transaction do |f| %>
     <%= f.attribute :date %>
     <%= f.attribute :amount %>
@@ -10,7 +12,8 @@
         <%= submit_tag "Create Bill" %>
     <% end %>
 <% else %>
-    <%= link_to "Bill...", bill_path(@transaction.bill) %>
+    <%= link_to "Bill...", bill_path(@transaction.bill) %> |
+    <%= link_to @transaction.vendor_name, vendor_path(@transaction.vendor) %>
 <% end %>
 
 <%= debug @transaction %>

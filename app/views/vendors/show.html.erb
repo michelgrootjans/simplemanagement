@@ -1,5 +1,6 @@
+<h1>Vendor: <%= @vendor.name %></h1>
+
 <%= show_for @vendor do |f| %>
-    <%= f.attribute :name %>
     <%= f.attribute :account_number %>
     <%= f.attribute :amount %>
 <% end %>

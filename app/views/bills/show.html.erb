@@ -1,3 +1,5 @@
+<h1>Bill</h1>
+
 Vendor: <%= link_to @vendor.name, vendor_path(@vendor) if @vendor.present? %>
 <%= show_for @bill do |f| %>
     <%= f.attribute :date %>

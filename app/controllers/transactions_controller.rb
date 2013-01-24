@@ -4,7 +4,7 @@ class TransactionsController < ApplicationController
   end
 
   def unattached
-    @transactions = Transaction.where(bill_id: nil)
+    @transactions = Transaction.unattached
     render :index
   end
 

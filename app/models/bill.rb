@@ -9,4 +9,8 @@ class Bill < ActiveRecord::Base
   def amount
     transactions.map(&:amount).sum
   end
+
+  def vendor_name
+    vendor.name
+  end
 end

@@ -12,7 +12,7 @@
   <li><%= link_to "Vendors", vendors_path %></li>
   <li><%= link_to "Bills", bills_path %></li>
   <li><%= link_to "Transactions", transactions_path %></li>
-  <li><%= link_to "Unattached Transactions", transactions_unattached_path %></li>
+  <li><%= link_to "Unattached Transactions (#{Transaction.unattached.count})", transactions_unattached_path %></li>
 </ul>
 
 
