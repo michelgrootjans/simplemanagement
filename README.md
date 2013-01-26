@@ -10,18 +10,24 @@ FEATURES
 - attach transaction to existing bill
 - attach transaction to a new bill from an existing vendor
 - edit vendor
+- create invoice from transaction
+- add transaction to invoice
 
 WIP
 ---
 
 TODO
 ----
+- add bill item
+- verify bill total
+- mark bill as complete
+- detach transaction from bill
+- delete vendor
+- delete bill
 - edit bill
 - create bill
 - authentication
 - create invoice
 - mark invoice as sent
-- add transaction to invoice
-- create invoice from transaction
 - create customer
 - create vendor
