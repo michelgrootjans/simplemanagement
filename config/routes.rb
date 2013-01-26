@@ -1,5 +1,5 @@
 Simplemanagement::Application.routes.draw do
-  # root :to => 'welcome#index'
+  root :to => 'home#index'
 
   resources :vendors, only: [:index, :show, :edit, :update] do
     resources :transactions, only: [] do
