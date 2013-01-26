@@ -38,7 +38,7 @@ describe ImportTransactionsCommandHandler do
         "Bedrag" => "12,34",
         "Munteenheid" => "EUR",
         "Omschrijving" => "Een omschrijving",
-        "Detail" => "Een detail",
+        "Detail van de omzet" => "Een detail",
         "Bericht" => "Een bericht",
     }}
     subject{ handler.convert_transaction(row) }
@@ -56,7 +56,7 @@ describe ImportTransactionsCommandHandler do
 
     it "works without amount" do
       row["Bedrag"] = nil
-      subject.amount.should == nil
+      subject.amount.should == 0
     end
 
     #Rekeningnummer;Naam van de rekening;Rekening tegenpartij;Omzetnummer;
